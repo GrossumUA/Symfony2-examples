@@ -1,0 +1,17 @@
+services:
+    lessons.di_and_unittests.Mailer:
+        class: Lessons\DIAndUnitTestsBundle\Services\Mailer
+        arguments:
+            - "%di_and_unittests.additiona_email%"
+        
+    lessons.di_and_unittests.MessagesTemplates:
+        class: Lessons\DIAndUnitTestsBundle\Services\MessagesTemplates
+        arguments:
+            - "%di_and_unittests.email_is_valid_message%"
+            - "%di_and_unittests.email_is_invalid_message%"
+
+    lessons.di_and_unittests.Notificator:
+        class: Lessons\DIAndUnitTestsBundle\Services\Notificator
+        arguments:
+            - @lessons.di_and_unittests.Mailer
+            - @lessons.di_and_unittests.MessagesTemplates

@@ -1,0 +1,3 @@
+di_and_unittests:
+    path:      /sendemail/{email}
+    defaults:  { _controller: DIAndUnitTestsBundle:SendEmailOnRequest:index }

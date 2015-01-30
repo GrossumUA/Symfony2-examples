@@ -1,0 +1,4 @@
+parameters:
+    di_and_unittests.additiona_email: "some@example.com"
+    di_and_unittests.email_is_valid_message: "User entered valid email:"
+    di_and_unittests.email_is_invalid_message: "User entered invalid email:"
