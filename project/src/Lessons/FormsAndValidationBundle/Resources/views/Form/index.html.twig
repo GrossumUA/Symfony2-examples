@@ -1,1 +1,51 @@
 Form controller
+
+{#One line form render#}
+{#{{ form_widget(request_contact_form) }}#}
+
+{{ form_start(request_contact_form, {'attr': {'class': 'center formStart', 'novalidate': 'novalidate', 'id':'project-request-form', 'enctype':'multipart/form-data'}}) }}
+
+{#Render form errors#}
+{{ form_errors(request_contact_form) }}
+
+<div class="screen clearfix info">
+    <div class="column2">
+        <div class="formStart_row">
+            {{ form_errors(request_contact_form.name) }}
+            {{ form_widget(request_contact_form.name, {'attr': {'placeholder': 'Your name' } }) }}
+        </div>
+        <div class="formStart_row">
+            {{ form_errors(request_contact_form.gender) }}
+            {{ form_widget(request_contact_form.gender, {'attr': {'placeholder': 'Gender' } }) }}
+        </div>
+        <div class="formStart_row">
+            {{ form_errors(request_contact_form.email) }}
+            {{ form_widget(request_contact_form.email, {'attr': {'placeholder': 'Email address' } }) }}
+        </div>
+    </div>
+    <div class="column2 left">
+        <div class="formStart_row">
+            {{ form_errors(request_contact_form.message) }}
+            {{ form_widget(request_contact_form.message, {'attr': {'placeholder': 'Your pretty message' } }) }}
+        </div>
+        <div class="formStart_row">
+            {{ form_errors(request_contact_form.needAnswer) }}
+            {{ form_widget(request_contact_form.needAnswer, {'attr': {'placeholder': 'Need answer?' } }) }}
+        </div>
+    </div>
+</div>
+
+
+    <div class="formBott">
+        {{ form_widget(request_contact_form.save) }}
+    </div>
+    {{ form_end(request_contact_form) }}
+
+
+
+{% if app.session.flashbag.all.done[0] is defined %}
+
+    Form is saved
+
+{% endif %}
+

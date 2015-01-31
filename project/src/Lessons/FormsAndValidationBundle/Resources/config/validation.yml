@@ -1,0 +1,13 @@
+Lessons\FormsAndValidationBundle\Entity\RequestContact:
+    properties:
+        name:
+            - NotBlank: ~
+        gender:
+            - NotBlank: ~
+        email:
+            - NotBlank: ~
+            - Email: ~
+        message:
+            - NotBlank: ~
+        needAnswer:
+            - NotBlank: ~
