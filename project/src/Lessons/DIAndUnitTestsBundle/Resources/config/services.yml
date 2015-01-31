@@ -2,7 +2,7 @@ services:
     lessons.di_and_unittests.Mailer:
         class: Lessons\DIAndUnitTestsBundle\Services\Mailer
         arguments:
-            - "%di_and_unittests.additiona_email%"
+            - "%di_and_unittests.additional_email%"
         
     lessons.di_and_unittests.MessagesTemplates:
         class: Lessons\DIAndUnitTestsBundle\Services\MessagesTemplates
