@@ -1,0 +1,33 @@
+Lessons\FormsAndValidationBundle\Entity\RequestContact:
+    type: entity
+    table: request_contact
+    repositoryClass: Lessons\FormsAndValidationBundle\Entity\Repository\RequestContactRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: IDENTITY
+            option:
+                unsigned: true
+    fields:
+        name:
+            type: string
+            length: 255
+        email:
+            type: string
+            length: 255
+        message:
+            type: string
+            length: 255
+        needAnswer:
+            type: integer
+            option:
+                unsigned: true
+        status:
+            type: boolean
+            default: true
+    manyToOne:
+        requestType:
+            targetEntity: RequestContactType
+            inversedBy: requestContact
