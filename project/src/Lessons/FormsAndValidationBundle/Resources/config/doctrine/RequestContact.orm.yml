@@ -8,25 +8,32 @@ Lessons\FormsAndValidationBundle\Entity\RequestContact:
             id: true
             generator:
                 strategy: IDENTITY
-            option:
+            options:
                 unsigned: true
     fields:
         name:
             type: string
             length: 255
+        gender:
+            type: integer
+            length: 2
         email:
             type: string
             length: 255
         message:
             type: string
             length: 255
+        email:
+            type: string
+            length: 255
         needAnswer:
             type: integer
-            option:
+            options:
                 unsigned: true
         status:
             type: boolean
-            default: true
+            options:
+                default: true
     manyToOne:
         requestType:
             targetEntity: RequestContactType

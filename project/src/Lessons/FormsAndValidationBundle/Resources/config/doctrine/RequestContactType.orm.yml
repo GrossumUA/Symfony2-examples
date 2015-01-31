@@ -21,7 +21,8 @@ Lessons\FormsAndValidationBundle\Entity\RequestContactType:
                 default: 0
         status:
             type: boolean
-            default: true
+            options:
+                default: true
 
     manyToOne:
         category:

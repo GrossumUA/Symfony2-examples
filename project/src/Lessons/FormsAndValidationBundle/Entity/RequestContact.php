@@ -192,4 +192,32 @@ class RequestContact
     {
         return $this->requestType;
     }
+    /**
+     * @var integer
+     */
+    private $gender;
+
+
+    /**
+     * Set gender
+     *
+     * @param integer $gender
+     * @return RequestContact
+     */
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+
+        return $this;
+    }
+
+    /**
+     * Get gender
+     *
+     * @return integer 
+     */
+    public function getGender()
+    {
+        return $this->gender;
+    }
 }
