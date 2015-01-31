@@ -1,6 +1,3 @@
-app:
-    resource: @AppBundle/Controller/
-    type:     annotation
 
 lesons_bundle:
     resource: "@DIAndUnitTestsBundle/Resources/config/routing.yml"
