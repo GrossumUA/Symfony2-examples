@@ -9,6 +9,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class RequestContact
 {
+
+    const STATUS_UNREAD = 1;
+
+
     /**
      * @var integer
      */
@@ -18,6 +22,11 @@ class RequestContact
      * @var string
      */
     private $name;
+
+    /**
+     * @var integer
+     */
+    private $gender;
 
     /**
      * @var string
@@ -37,7 +46,12 @@ class RequestContact
     /**
      * @var boolean
      */
-    private $status;
+    private $status = self::STATUS_UNREAD;
+
+    /**
+     * @var \Lessons\FormsAndValidationBundle\Entity\RequestContactType
+     */
+    private $requestType;
 
 
     /**
@@ -71,6 +85,29 @@ class RequestContact
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set gender
+     *
+     * @param integer $gender
+     * @return RequestContact
+     */
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+
+        return $this;
+    }
+
+    /**
+     * Get gender
+     *
+     * @return integer 
+     */
+    public function getGender()
+    {
+        return $this->gender;
     }
 
     /**
@@ -164,11 +201,6 @@ class RequestContact
     {
         return $this->status;
     }
-    /**
-     * @var \Lessons\FormsAndValidationBundle\Entity\RequestContactType
-     */
-    private $requestType;
-
 
     /**
      * Set requestType
@@ -191,33 +223,5 @@ class RequestContact
     public function getRequestType()
     {
         return $this->requestType;
-    }
-    /**
-     * @var integer
-     */
-    private $gender;
-
-
-    /**
-     * Set gender
-     *
-     * @param integer $gender
-     * @return RequestContact
-     */
-    public function setGender($gender)
-    {
-        $this->gender = $gender;
-
-        return $this;
-    }
-
-    /**
-     * Get gender
-     *
-     * @return integer 
-     */
-    public function getGender()
-    {
-        return $this->gender;
     }
 }

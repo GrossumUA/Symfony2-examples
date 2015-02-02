@@ -3,10 +3,12 @@
 namespace Lessons\FormsAndValidationBundle\Controller;
 
 use Lessons\FormsAndValidationBundle\Entity\RequestContact;
+
 use Lessons\FormsAndValidationBundle\Form\RequestContactForm;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+
 
 class FormController extends Controller
 {
@@ -18,10 +20,10 @@ class FormController extends Controller
 
         $options['gender'] = $this->gender;
 
-
         $requestContactForm = $this->createForm(new RequestContactForm($options), new RequestContact());
 
         $requestContactForm->handleRequest($request);
+
 
         if ($requestContactForm->isValid()) {
 

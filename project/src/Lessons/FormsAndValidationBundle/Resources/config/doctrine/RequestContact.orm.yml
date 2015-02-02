@@ -32,8 +32,9 @@ Lessons\FormsAndValidationBundle\Entity\RequestContact:
                 unsigned: true
         status:
             type: boolean
+            nullable: false
             options:
-                default: true
+                default: 0
     manyToOne:
         requestType:
             targetEntity: RequestContactType

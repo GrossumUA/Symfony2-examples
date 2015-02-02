@@ -28,7 +28,7 @@ class RequestContactForm extends AbstractType
 
             ->add('save', 'submit', array('label' => 'Send message'))
 
-            ->setErrorBubbling(false)
+            ->setErrorBubbling(true)
         ;
 
         //add custom field to form

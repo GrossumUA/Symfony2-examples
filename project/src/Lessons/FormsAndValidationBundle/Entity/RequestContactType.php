@@ -29,6 +29,11 @@ class RequestContactType
      */
     private $status;
 
+    /**
+     * @var \Lessons\FormsAndValidationBundle\Entity\RequestContact
+     */
+    private $category;
+
 
     /**
      * Get id
@@ -108,11 +113,6 @@ class RequestContactType
     {
         return $this->status;
     }
-    /**
-     * @var \Lessons\FormsAndValidationBundle\Entity\RequestContact
-     */
-    private $category;
-
 
     /**
      * Set category
