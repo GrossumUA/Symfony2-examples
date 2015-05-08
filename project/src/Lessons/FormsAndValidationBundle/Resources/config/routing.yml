@@ -1,0 +1,3 @@
+forms_and_validation:
+    path:     /forms
+    defaults: { _controller: FormsAndValidationBundle:Form:request }

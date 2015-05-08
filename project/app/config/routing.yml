@@ -1,3 +1,6 @@
+forms_and_validation:
+    resource: "@FormsAndValidationBundle/Resources/config/routing.yml"
+    prefix:   /
 
 lesons_bundle:
     resource: "@DIAndUnitTestsBundle/Resources/config/routing.yml"

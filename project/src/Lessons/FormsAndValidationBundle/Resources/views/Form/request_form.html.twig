@@ -1,0 +1,106 @@
+Request Contact Form
+
+{#{{ form_start(project_request_form, {'attr': {'class': 'center formStart', 'novalidate': 'novalidate', 'id':'project-request-form', 'enctype':'multipart/form-data'}}) }}#}
+    {#<h1>start your project</h1>#}
+    {#<div class="thankYou">#}
+        {#Thank you for your interest in working with Grossum.<br>#}
+        {#Getting started is easy – just fill in the blanks below and we'll get back to you within one working day.<br>#}
+        {#How exciting!#}
+    {#</div>#}
+
+    {#<p class="required">All fields are required unless indicated.</p>#}
+
+
+
+{#{{ form_errors(project_request_form) }}#}
+
+{#<div class="screen clearfix info">#}
+    {#<div class="column2">#}
+        {#<div class="formStart_row">#}
+            {#{{ form_errors(project_request_form.name) }}#}
+            {#{{ form_widget(project_request_form.name, {'attr': {'placeholder': 'Your name' } }) }}#}
+        {#</div>#}
+        {#<div class="formStart_row">#}
+            {#{{ form_errors(project_request_form.email) }}#}
+            {#{{ form_widget(project_request_form.email, {'attr': {'placeholder': 'Email address' } }) }}#}
+        {#</div>#}
+    {#</div>#}
+    {#<div class="column2 left">#}
+        {#<div class="formStart_row">#}
+            {#{{ form_errors(project_request_form.company) }}#}
+            {#{{ form_widget(project_request_form.company, {'attr': {'placeholder': 'Company/Organization' } }) }}#}
+        {#</div>#}
+        {#<div class="formStart_row">#}
+            {#{{ form_errors(project_request_form.phone) }}#}
+            {#{{ form_widget(project_request_form.phone, {'attr': {'placeholder': 'Phone' } }) }}#}
+        {#</div>#}
+    {#</div>#}
+{#</div>#}
+    {#<h3>type of project</h3>#}
+    {#<p class="hint">Select all that apply</p>#}
+    {#<div class="projectTypes">#}
+            {#{{ form_widget(project_request_form.category) }}#}
+            {#{{ form_errors(project_request_form.category) }}#}
+    {#</div>#}
+    {#<div class="budget">#}
+        {#<h3>budget</h3>#}
+        {#<p class="hint">Select the budget for which you are targeting</p>#}
+        {#<div class="sliderBlock">#}
+            {#<span class="sliderValue min">$3k</span>#}
+            {#<span class="sliderValue max">$150k</span>#}
+            {#<div id="range"></div>#}
+        {#</div>#}
+
+        {#{{ form_errors(project_request_form.budgetFrom) }}#}
+        {#{{ form_errors(project_request_form.budgetTo) }}#}
+
+        {#<p class="sliderRange">$<span id="value-span1"></span>k - $<span id="value-span2"></span>k</p>#}
+
+        {#{{ form_widget(project_request_form.budgetFrom) }}#}
+        {#{{ form_widget(project_request_form.budgetTo) }}#}
+
+    {#</div>#}
+    {#<div class="timeAbout">#}
+        {#<h3>timeframe</h3>#}
+        {#<div class="formStart_row">#}
+            {#<p class="hint">Is there a specific timeframe or deadline for the project?</p>#}
+            {#{{ form_errors(project_request_form.timeframe) }}#}
+            {#{{ form_widget(project_request_form.timeframe) }}#}
+        {#</div>#}
+        {#<h3>about the project</h3>#}
+        {#<div class="formStart_row">#}
+            {#<p class="hint">Describe the project, requirements and objectives.</p>#}
+            {#{{ form_errors(project_request_form.description) }}#}
+            {#{{ form_widget(project_request_form.description) }}#}
+        {#</div>#}
+    {#</div>#}
+
+    {#<div class="filesAtt">#}
+        {#<h3>files/attachments</h3>#}
+
+        {#<p class="hint">Upload any relevant files or documents, if required (optional)</p>#}
+        {#<div class="dropBlock" id="dropzone">#}
+            {#<span class="plus"></span>#}
+            {#<div class="child">#}
+                {#<p>Drop files here to upload</p>#}
+                {#Maximum file size 10mb#}
+            {#</div>#}
+            {#<div class="helper"></div>#}
+        {#</div>#}
+    {#</div>#}
+
+    {#<div class="formBott">#}
+        {#{{ form_widget(project_request_form.save) }}#}
+    {#</div>#}
+    {#{{ form_end(project_request_form) }}#}
+
+
+{#{{ form_widget(request_form) }}#}
+
+
+{% if app.session.flashbag.all.done[0] is defined %}
+
+Form is saved
+
+{% endif %}
+

@@ -1,0 +1,4 @@
+services:
+#    forms_and_validation.example:
+#        class: Lessons\FormsAndValidationBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
